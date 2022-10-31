@@ -1,10 +1,9 @@
-import 'package:bloc/bloc.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsapp/screens/business.dart';
 import 'package:newsapp/screens/science.dart';
-import 'package:newsapp/screens/settings.dart';
+
 import 'package:newsapp/screens/sport.dart';
 
 import '../network/remote/dioHelper.dart';

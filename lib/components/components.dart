@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 import 'package:newsapp/components/constans/const.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import '../layout/webView.dart';
 
@@ -86,3 +85,61 @@ Widget myDivider() => Padding(
 
 void navigatTo(context, widget) =>
     Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
+
+void navigatAndKill(context, widget) => Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => widget),
+      ((route) {
+        return false;
+      }),
+    );
+
+Widget defultFormField({
+  required Function validate,
+  required bool isPassowrd,
+  required TextEditingController controller,
+  required String label,
+  required IconData icon,
+  IconData? suffixicon,
+}) =>
+    TextFormField(
+      style: TextStyle(fontSize: 15),
+      validator: (value) {
+        return validate(value);
+      },
+      obscureText: isPassowrd,
+      controller: controller,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        label: Text(label),
+        prefixIcon: Icon(
+          icon,
+          color: Colors.blue,
+        ),
+        suffixIcon: Icon(
+          suffixicon,
+        ),
+      ),
+      keyboardType: TextInputType.emailAddress,
+    );
+
+Widget defultButton({
+  double width = 200,
+  double highet = 50,
+  required String text,
+  double? elevation,
+  required Function onPressed,
+}) =>
+    Container(
+      width: width,
+      height: highet,
+      child: RaisedButton(
+        onPressed: () {
+          return onPressed();
+        },
+        child: Text(text),
+        color: Colors.blue,
+        elevation: elevation,
+        textColor: Colors.white,
+      ),
+    );

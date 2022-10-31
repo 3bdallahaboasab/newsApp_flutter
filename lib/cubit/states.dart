@@ -28,4 +28,17 @@ class GetDataSearchErrorState extends AppStates {}
 
 class GetDataSearchSuccState extends AppStates {}
 
+// Shop App
 class LoadingGetSearchDataState extends AppStates {}
+
+class LoadingPostLoginScreen extends AppStates {}
+
+class SuccsessPostLoginScreen extends AppStates {}
+
+class ErrorPostLoginScreen extends AppStates {
+  String error;
+
+  ErrorPostLoginScreen(this.error);
+}
+
+class ShopAppChangePasswordState extends AppStates {}

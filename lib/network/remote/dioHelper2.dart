@@ -1,19 +1,16 @@
 import 'package:dio/dio.dart';
 
-class DioHelper {
+class DioHelper2 {
   static late Dio dio;
-// https://newsapi.org/
-// v2/everything?
-// q=tesla&from=2022-08-22&sortBy=publishedAt&
-// apiKey=7afa4284413348caa946cf4a421b0217
 
   static init() {
     dio = Dio(
       BaseOptions(
-          baseUrl: 'https://newsapi.org/',
+          baseUrl: 'https://student.valuxapps.com/api/',
           receiveDataWhenStatusError: true,
-          connectTimeout: 10000000000,
-          receiveTimeout: 10000000000),
+          headers: {
+            'Content-Type': 'application/json',
+          }),
     );
   }
 
@@ -23,5 +20,10 @@ class DioHelper {
       url,
       queryParameters: query,
     );
+  }
+
+  static Future<Response> postData(
+      {required String url, dynamic query, dynamic data}) async {
+    return dio.post(url, queryParameters: query, data: data);
   }
 }

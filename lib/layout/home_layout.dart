@@ -1,15 +1,13 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsapp/cubit/cubit2.dart';
 import 'package:newsapp/cubit/states.dart';
-import 'package:newsapp/network/remote/dioHelper.dart';
+
 import 'package:newsapp/search/search.dart';
 
 import '../components/components.dart';
-import '../cubit/cubit.dart';
 import '../cubit/cubit.dart';
 
 class HomeScreen extends StatelessWidget {
